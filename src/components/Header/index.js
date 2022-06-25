@@ -10,7 +10,7 @@ const Header = ({setBackData, backData}) =>{
 				className="header-button"
 				onClick={()=>{
 					let data = backData;
-					let date =  prompt('Введите дату в формате YYYY-MM-DD HH:mm:ss ')	;
+					let date =  prompt('Введите дату в формате YYYY-MM-DD HH:mm:ss ').replace(' ', 'T')	;
 					data.push({date:date})
 					setBackData(data)
 					fetch('/api', {
