@@ -1,0 +1,20 @@
+
+.App-footer{
+   display: flex;
+   position: fixed;
+   bottom: 0;
+   display: flex;
+   justify-content: space-between;
+   max-width: 740px;
+   width: 100%;
+   padding: 32px;
+   background: antiquewhite;
+}
+.footer-button{
+   background: none;
+   border: none;
+   padding-right:64px ;
+   font-size: 32px;
+   color: orangered;
+}
+

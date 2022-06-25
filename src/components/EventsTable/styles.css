@@ -1,0 +1,45 @@
+.App-EventsTable{
+    margin-top: 5px;
+}
+
+.timeLine{
+    display: flex;
+    justify-content: space-between;
+}
+
+.event{
+    border-right: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+    width: 12.5%;
+    margin: 0;
+    padding: 2px;
+}
+.event:last-child{
+    border-right: none;
+}
+.event-button{
+    padding: 13px 0 13px 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 0;
+    background: none;
+}
+
+.Time{
+    padding-right: 5px;
+    width: 12.5%;
+    text-align: right;
+    font-size: 12px;
+    font-weight: bold;
+    color: gray;
+}
+
+.evented{
+    color: red;
+    background: lightsteelblue;
+}
+
+.active {
+    background: slategray;
+}
