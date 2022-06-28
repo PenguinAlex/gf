@@ -18,7 +18,7 @@ const WeekMonthDay = ({index, WD, currentDate, setCurrentDate}) =>{
 	const monthDayMS = weekDay !== 0 ? new Date().setDate(currentDay + index - weekDay) : new Date().setDate(currentDay + index - 7)
 	const monthDay = new Date(monthDayMS).getDate()
 	const style = () =>{
-		if(isToday(today, new Date(monthDayMS))){
+		if(isToday(today, new Date(currentDate))&& new Date(currentDate).getDate() === monthDay){
 			return 'marked'
 		} else  return ''
 	}

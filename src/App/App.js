@@ -6,11 +6,14 @@ import Footer from "../components/Footer";
 
 
  function App() {
+     function getWeek(date){
+         return(Math.round( date / 1000/ 60/ 60/ 24 /7))
+     }
      const[backData, setBackData] = useState([{}]);
      const [currentDate, setCurrentDate] = useState(Date.now());
-     const [active, setActive] = useState([0,0])
+     const [active, setActive] = useState([0,0, 0, null])
      useEffect(()=>{
-         fetch('/api').then(
+         if (currentDate!==undefined)fetch('/api').then(
              response => response.json()
          ).then(
                 data => {
@@ -25,15 +28,23 @@ import Footer from "../components/Footer";
             setCurrentDate = {setCurrentDate}
             setBackData = {setBackData}
             backData={backData}
-            active = {active}
-            setActive = {setActive}
+
         />
         <Calendar
             currentDate = {currentDate}
             setCurrentDate = {setCurrentDate}
             backData = {backData}
+            active = {active}
+            setActive = {setActive}
         />
-          <Footer/>
+          <Footer
+              active = {active}
+              setActive = {setActive}
+              setBackData = {setBackData}
+              backData = {backData}
+              setCurrentDate = {setCurrentDate}
+
+          />
       </div>
   );
 }
