@@ -7,24 +7,23 @@ const Header = ({setBackData, backData}) =>{
 			<a className="header-text">Interview Calendar</a>
 			<button
 				className="header-button"
-				onClick={() => {
+				onClick={()=>{
 					let data = backData;
-					let date = prompt('Введите дату в формате YYYY-MM-DD HH:mm:ss ')
+					let date =  prompt('Введите дату в формате YYYY-MM-DD HH:mm:ss ')
 					if (date !== '') {
-						data.push({date: date})
-						setBackData(data)
-						fetch('/api', {
-							method: 'POST',
-							headers: {
-								'Accept': 'application/json',
-								'Content-Type': 'application/json',
-							},
-							body: JSON.stringify(backData)
-						})
+					data.push({date:date})
+					setBackData(data)
+					fetch('/api', {
+						method: 'POST',
+						headers: {
+							'Accept': 'application/json',
+							'Content-Type': 'application/json',
+						},
+					body: JSON.stringify(backData)
+					})
 
-						window.location.reload()
-					}
-				}
+					window.location.reload()
+				}}
 				}
 			>
 				+
